@@ -41,7 +41,7 @@ namespace MusicPlaylistAnalyzer {
       string[] keys = { "name", "artist", "album", "genre", "size", "time", "year", "plays" };
       foreach (string key in keys) {
         if (!data.ContainsKey(key)) {
-          throw new Exception("\"key\" not found in given data");
+          throw new Exception(string.Format("\"{0}\" not found in given data", key));
         }
       }
       if (!int.TryParse(data["time"], out int time)) {

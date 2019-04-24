@@ -3,7 +3,7 @@ using System.IO;
 
 namespace MusicPlaylistAnalyzer {
   class Program {
-    static string[] FILE_HEADERS = { "Name", "Artist", "Album", "Genre", "Size", "Time", "Year", "Plays" };
+    static readonly string[] FILE_HEADERS = { "Name", "Artist", "Album", "Genre", "Size", "Time", "Year", "Plays" };
 
     static void Main(string[] args) {
       if (args.Length == 2 && AreAllFilePaths(args)) {
@@ -23,7 +23,7 @@ namespace MusicPlaylistAnalyzer {
 
     static bool AreAllFilePaths(string[] paths) {
       foreach (string path in paths) {
-         if (!Path.HasExtension(path)) {
+        if (!Path.HasExtension(path)) {
           Console.WriteLine("\"{0}\" is not a correct file path", path);
           return false;
         }

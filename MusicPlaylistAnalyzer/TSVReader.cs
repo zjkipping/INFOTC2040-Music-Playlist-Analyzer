@@ -5,8 +5,6 @@ using System.Linq;
 
 namespace MusicPlaylistAnalyzer {
   public class TSVReader {
-    public TSVReader() { }
-
     public List<Song> ReadFile(string filePath, string[] expectedHeaders) {
       List<Song> songs = new List<Song>();
       StreamReader sr = null;
